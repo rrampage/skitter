@@ -16,3 +16,9 @@ gol-wasm: game-of-life/game_of_life.c
 	emcc -o target/gol.html -Wall -Wextra -std=c99 game-of-life/*.c lib/libraylibweb.a -I ./include -sUSE_GLFW=3
 gol-wasm-release: game-of-life/game_of_life.c
 	emcc -o target/gol.html -Wall -Wextra -std=c99 game-of-life/*.c lib/libraylibweb.a -I ./include -Oz --closure 1 -sUSE_GLFW=3 -sFILESYSTEM=0 -sSINGLE_FILE --shell-file game-of-life/shell.html
+minpx: minpx/main.c
+	gcc -o target/minpx -Wall -std=c99 minpx/*.c lib/libraylib.a -I ./include -lGL -lm -lpthread -ldl -lrt && ./target/minpx
+minpx-wasm: minpx/main.c
+	emcc -o target/minpx.html -Wall -std=c99 minpx/*.c lib/libraylibweb.a  -I ./include -sUSE_GLFW=3 --shell-file minpx/shell.html --preload-file minpx/assets --preload-file storage.data
+minpx-wasm-release: minpx/main.c
+	emcc -o target/minpx.html -Wall -std=c99 -Oz --closure 1 minpx/*.c lib/libraylibweb.a  -I ./include -sUSE_GLFW=3 -sSINGLE_FILE --shell-file minpx/shell.html --preload-file minpx/assets --preload-file storage.data
