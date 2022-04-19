@@ -10,5 +10,12 @@ Tools assumed to be installed:
 - `gcc`
 - `emsdk`
 
-Featuring:
-- Pong (SDL) : `make pong-sdl`
+Download and build `raylib` and use the `libraylib.a` and `libraylibweb.a` for native and WASM builds respectively.
+
+Generally, I have tried to make the code compile to both linux and WASM. In the `Makefile`, if `target` is native, `target-wasm` and `target-wasm-release` will generally build the same for WASM.
+
+Code:
+- Pong (SDL) : `make pong-sdl` and `make pong-sdl-wasm`
+- Pong (raylib): `make pong-raylib`
+- Game of Life: `make gol`
+- [minpx](https://github.com/Datavorous/minpx): `make minpx`
