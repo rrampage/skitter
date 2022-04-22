@@ -13,8 +13,8 @@
 // Globals
 const int screenWidth = 800;
 const int screenHeight = 800;
-const Color liveColor = RED;
-const Color deadColor = DARKGRAY;
+const Color liveColor = GOLD;
+const Color deadColor = DARKPURPLE;
 const float cellHeight = (screenHeight + 0.0f)/MAT_ROWS;
 const float cellWidth = (screenWidth + 0.0f)/MAT_COLS;
 Vector2 cellSize = {cellHeight, cellWidth};
@@ -127,7 +127,6 @@ void renderGame(void) {
         ClearBackground(RAYWHITE);
         for (int i = 0; i < MAT_ROWS; i++) {
             for (int j = 0; j < MAT_COLS; j++) {
-                //DrawRectangleV((Vector2){50.0f * i, 50.0f*j}, cellSize, (matrix[i][j]) ? liveColor : deadColor);
                 DrawRectangleV((Vector2){cellHeight * i, cellWidth*j}, cellSize, (matrix[i][j]) ? liveColor : deadColor);
             }
         }
