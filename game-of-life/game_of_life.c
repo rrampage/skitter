@@ -7,8 +7,8 @@
     #include <emscripten.h>
 #endif
 
-#define MAT_ROWS 256
-#define MAT_COLS 256
+#define MAT_ROWS 512
+#define MAT_COLS 512
 
 // Globals
 const int screenWidth = 800;
