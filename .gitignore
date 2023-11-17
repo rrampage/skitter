@@ -2,3 +2,4 @@ target
 lib
 storage.data
 minpx/storage.data
+.DS_Store

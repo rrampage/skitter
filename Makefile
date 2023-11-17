@@ -16,7 +16,7 @@ pong-raylib: pong-raylib/pong.c
 pong-raylib-osx: pong-raylib/pong.c
 	gcc -o target/pong-raylib $(c_flags) pong-raylib/pong.c lib/libraylib.a -I ./include $(osx_flags) && ./target/pong-raylib
 pong-raylib-wasm: pong-raylib/pong.c
-	emcc -o target/pong_raylib.html $(c_flags) pong-raylib/pong.c lib/libraylibweb.a -I ./include $(wasm_flags) $(wasm_release_flags) -sFILESYSTEM=0 --shell-file pong-raylib/shell.html
+	emcc -o target/pong.html $(c_flags) pong-raylib/pong.c lib/libraylibweb.a -I ./include $(wasm_flags) $(wasm_release_flags) -sFILESYSTEM=0 --shell-file pong-raylib/shell.html
 gol: game-of-life/game_of_life.c
 	gcc -o target/gol $(c_flags) game-of-life/*.c lib/libraylib.a -I ./include $(linux_flags) && ./target/gol
 gol-osx: game-of-life/game_of_life.c
